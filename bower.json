@@ -1,0 +1,35 @@
+{
+  "name": "blurbiz-client",
+  "version": "0.0.1",
+  "description": "An AngularJS implementation of the responsive dashboard",
+  "main": "app/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rdash-ui": "1.0.*",
+    "angular": "~1.5.0",
+    "angular-cookies": "~1.5.0",
+    "angular-bootstrap": "~1.0.3",
+    "angular-ui-router": "^0.2.15",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "angular-socket-io": "^0.7.0",
+    "ng-droplet": "^0.5.16",
+    "ng-file-upload-shim": "^12.0.4",
+    "ng-file-upload": "^12.0.4",
+    "angular-file-upload": "angular-file-upload-binaryjs#^1.2.0",
+    "filepicker-js-bower": "filepicker-js#^2.4.17",
+    "video.js": "^5.13.0",
+    "google-drive": "^1.0.1"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
+  }
+}

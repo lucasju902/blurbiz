@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" ng-app="Blurbiz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BlurBiz</title>
+  <!-- STYLES -->
+  <!-- build:css lib/css/main.min.css -->
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+  <link rel="stylesheet" type="text/css" href="components/video.js/dist/video-js.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/drag.css">
+  <link rel="stylesheet" type="text/css" href="css/hover.css">
+  <link rel="stylesheet" type="text/css" href="css/droplet.css">
+  <link rel="stylesheet" type="text/css" href="css/video.css">
+
+  <!-- endbuild -->
+  <!-- SCRIPTS -->
+  <!-- build:js lib/js/main.min.js -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.4/js/ngDialog.min.js"></script>
+  <script src="node_modules/socket.io-client/socket.io.js"></script>
+  <script src="node_modules/socket.io-stream/socket.io-stream.js"></script>
+  <script src="node_modules/angular-google-picker/dist/google-picker.min.js"></script>
+
+  <script type="text/javascript" src="components/angular-socket-io/socket.js"></script>
+  <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+  <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="components/ng-droplet/dist/ng-droplet.min.js"></script>
+  <script type="text/javascript" src="components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+  <script type="text/javascript" src="components/ng-file-upload/ng-file-upload.min.js"></script>
+  <script type="text/javascript" src="components/video.js/dist/video.js"></script>
+  
+  <script src="http://apis.google.com/js/client.js"></script>
+  <script src="http://apis.google.com/js/api.js"></script>
+
+  <!-- <script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script> -->
+  
+  <!-- endbuild -->
+  <!-- Custom Scripts -->
+  
+  <!-- DropBox API -->
+  <!-- <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="1pu30ny8lsmkll3"></script> -->
+  <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="ufxxb4dodhctwdr"></script>
+  <!-- Box API -->
+  <script type="text/javascript" src="https://app.box.com/js/static/select.js"></script>
+  <!-- Google Drive API -->
+  <script type="text/javascript" src="js/module.js"></script>
+  <script type="text/javascript" src="js/routes.js"></script>
+
+  <script type="text/javascript" src="js/filters/trustUrl.js"></script>
+  <script type="text/javascript" src="js/services/dropbox.provider.js"></script>
+  <script type="text/javascript" src="js/services/socket.service.js"></script>
+  <script type="text/javascript" src="js/services/user.service.js"></script>
+  <script type="text/javascript" src="js/services/project.service.js"></script>
+  <script type="text/javascript" src="js/services/upload.service.js"></script>
+  <script type="text/javascript" src="js/services/flash.service.js"></script>
+  <script type="text/javascript" src="js/services/local.storage.service.js"></script>
+
+  <script type="text/javascript" src="js/controllers/auth/auth.controller.js"></script>
+  <script type="text/javascript" src="js/controllers/auth/confirmate.email.controller.js"></script>
+  <script type="text/javascript" src="js/controllers/auth/wait.confirmate.email.controller.js"></script>
+
+  <script type="text/javascript" src="js/controllers/general/confirm.modal.controller.js"></script>
+
+  <script type="text/javascript" src="js/controllers/project/edit.controller.js"></script>
+  <script type="text/javascript" src="js/controllers/project/index.controller.js"></script>
+  <script type="text/javascript" src="js/controllers/project/modal.controller.js"></script>
+  <script type="text/javascript" src="js/controllers/master-ctrl.js"></script>
+  <script type="text/javascript" src="js/controllers/alert-ctrl.js"></script>
+
+  <script type="text/javascript" src="js/directives/confirm-modal.js"></script>
+  <script type="text/javascript" src="js/directives/enter-key.js"></script>
+  <script type="text/javascript" src="js/directives/err-src.js"></script>
+  <script type="text/javascript" src="js/directives/loading.js"></script>
+  <script type="text/javascript" src="js/directives/widget-body.js"></script>
+  <script type="text/javascript" src="js/directives/widget-header.js"></script>
+  <script type="text/javascript" src="js/directives/widget-footer.js"></script>
+  <script type="text/javascript" src="js/directives/widget.js"></script>
+  <script type="text/javascript" src="js/directives/drag-drop-uploader.js"></script>
+  <script type="text/javascript" src="js/directives/dropbox-picker.js"></script>
+  <script type="text/javascript" src="js/directives/box-picker.js"></script>
+  <script type="text/javascript" src="js/directives/custom-link-invoker.js"></script>
+</head>
+<body>
+  <div ui-view>
+
+  </div><!-- End Page Wrapper -->
+</body>
+</html>

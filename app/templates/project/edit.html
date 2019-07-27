@@ -1,0 +1,173 @@
+
+<div class="projects-container">
+    <div class="row">
+        <div class="item dropdown" uib-dropdown>
+            <a class="btn btn-default dropdown-toggle" href="#" uib-dropdown-toggle>
+                <img class="icon" src="img/icons/add.png">Add Media Files
+            </a>
+            <ul class="dropdown-menu horizontal">
+                <li class="link">
+                    <a ngf-select="uploadFiles($files)" multiple="multiple" class="center">
+                        <div>
+                            <img class="icon" src="img/icons/cloud-computing.png">
+                        </div>
+                        <div>
+                            <span>Computer</span>
+                        </div>
+                    </a>
+                    <a drop-box-picker db-picker-files="dpfiles" class="center">
+                        <div>
+                            <img class="icon" src="img/icons/dropbox.png">
+                        </div>
+                        <div>
+                            <span>Dropbox</span>
+                        </div>
+                    </a>
+                    <a lk-google-picker on-picked="onGoogleFilePicked(docs)" on-loaded="onGoogleFileLoaded()" on-cancel="onGoogleFileCancel()" class="center">
+                        <div>
+                            <img class="icon" src="img/icons/drive.png">
+                        </div>
+                        <div>
+                            <span>Google Drive</span>
+                        </div>
+                    </a>
+                    <a box-picker box-picker-files="boxfiles" class="center">
+                        <div>
+                            <img class="icon" src="img/icons/box.png">
+                        </div>
+                        <div>
+                            <span>Box</span>
+                        </div>
+                    </a>
+                    <a ng-click="instagram()"  class="center">
+                        <div>
+                            <img class="icon" src="img/icons/instagram.png">
+                        </div>
+                        <div>
+                            <span>Instagram</span>
+                        </div>
+                    </a>
+                    <a custom-link-invoker is-editing="custom_link_editing" class="center">
+                        <div>
+                            <img class="icon" src="img/icons/url-link.png">
+                        </div>
+                        <div>
+                            <span>URL</span>
+                        </div>
+                    </a>
+                </li>
+                <li custom-link-invoker is-editing="custom_link_editing" class="link" ng-show="custom_link_editing">
+                    <div class="custom-link-wrapper">
+                        <form ng-submit="saveCustomFile()">
+                            <input class="custom-link-box" type="text" ng-model="url" placeholder="Paste URL" />
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-right">
+            <a href="#" class="btn btn-link center">
+                <img class="icon" src="img/icons/down-arrow-on-horizontal-line.png" />
+                <span>Download</span>
+            </a>
+            <a href="#" class="btn btn-link center">
+                <img class="icon" src="img/icons/media-play-symbol.png" />
+                <span>Play</span>
+            </a>
+            <a href="#" class="btn btn-link center">
+                <img class="icon" src="img/icons/share-option.png" />
+                <span>Share</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- <div class="row">
+
+        Upload Log:
+        <pre>{{log}}</pre>
+    </div>  -->
+
+    <div drag-drop-uploader ng-cloak>
+        <div class="row" ng-show="showProjects">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="m in media">
+                <div class="project-container text-center">
+                    <div class="hovereffect">
+                        <img ng-if="isImage(m.path)" class="representative" ng-src="{{ m.path }}">
+
+                        <video ng-if="isVideo(m.path)" ng-attr-id="{{ getUuid(m.path) }}"  class="video-js" controls preload="auto">
+                            <source ng-src="{{ m.path | trustUrl}}">
+                            <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>
+
+                        <div class="img-cover" ng-attr-data-for="{{ getUuid(m.path) }}">
+                            <div class="hover-btn-delete">
+                                <button type="button" class="close" confirm-really-do="deleteImage(m.path)" confirm-message="Are you sure you want to delete this file?">
+                                    <span aria-hidden="true">×</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                            <div ng-if="isVideo(m.path)" class="hover-btn-play">
+                                <a ng-click="playVideo(getUuid(m.path))" class="btn-play">
+                                    <img class="icon" src="img/icons/play-button-white.png"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>{{ m.name }}</h4>
+                    <p>{{ m.resolution }}</p>
+                </div>
+            </div>
+            
+        </div>  
+
+        <div class="row" ng-hide="showProjects">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <div>
+                        <img class="representative" ng-src="/img/icons/empty_images.png">
+                        <h4>Drop your media files here!</h4>
+                        <p>Or Upload from Dropbox, Google Drive, Box & Instagram!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--<div id="holder"></div><p id="upload" class="hidden"><label>Drag & drop not supported, but you can still upload via this input field:<br><input type="file"></label></p><p id="filereader">File API & FileReader API not supported</p><p id="formdata">XHR2's FormData is not supported</p><p id="progress">XHR2's upload progress isn't supported</p><p>Upload progress: <progress id="uploadprogress" min="0" max="100" value="0">0</progress></p>-->
+
+<style>
+    /*#holder { border: 10px dashed #ccc; width: 300px; min-height: 300px; margin: 20px auto;}*/
+    #holder.hover { border: 10px dashed #0c0; }
+    #holder.hover .img-cover { display: none; }
+    #holder img { display: block; margin: 10px auto; }
+    #holder p { margin: 10px; font-size: 14px; }
+    progress { width: 100%; }
+    progress:after { content: '%'; }
+    .fail { background: #c00; padding: 2px; color: #fff; }
+    .hidden { display: none !important;}
+    
+</style>
+
+
+    
+</div>
+
+<script type="text/ng-template" id="instagramModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Instagram Images</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <ul>
+            <li ng-click="upload(image)" ng-repeat="image in data">
+                <img src="{{ image.images.thumbnail.url }}" />
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
