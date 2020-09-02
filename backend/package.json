@@ -9,7 +9,7 @@
     "fs": "0.0.2",
     "gm": "^1.23.0",
     "google-drive": "0.0.7",
-    "googleapis": "^12.4.0",
+    "googleapis": "^59.0.0",
     "http": "0.0.0",
     "jsonwebtoken": "~7.1.7",
     "node-uuid": "~1.4.7",
